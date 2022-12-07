@@ -47,7 +47,7 @@ resource "digitalocean_droplet" "application" {
 
 
 resource "digitalocean_droplet" "frontend" {
-  image    = var.image_name
+  image    = "rockylinux-9-x64"
   name     = "frontend_A01062029"
   region   = var.region
   size     = "s-1vcpu-512mb-10gb"
