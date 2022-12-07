@@ -48,7 +48,7 @@ resource "digitalocean_droplet" "application" {
 
 
 resource "digitalocean_droplet" "frontend" {
-  image    = var.image_mane
+  image    = var.image_name
   
   name     = "frontend_A01062029"
   region   = var.region
