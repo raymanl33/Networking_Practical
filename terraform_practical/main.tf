@@ -64,8 +64,8 @@ resource "digitalocean_droplet" "frontend" {
 }
 
 output "server_ip" {
-  value1 = digitalocean_droplet.application.*.ipv4_address
-  value2 = digitalocean_droplet.frontend.*.ipv4_address
+  value = digitalocean_droplet.application.*.ipv4_address
+  value = digitalocean_droplet.frontend.*.ipv4_address
 }
 
 # Create a new VPC
