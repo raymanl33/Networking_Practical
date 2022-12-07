@@ -17,9 +17,6 @@ data "digitalocean_ssh_key" "trf_ssh_key" {
   name = "ansible_do"
 }
 
-data "digitalocean_project" "lab_project" {
-  name = "4640_Labs"
-}
 
 # Create a new tag 
 # Use tag to create load balancer
@@ -65,7 +62,7 @@ resource "digitalocean_droplet" "frontend" {
 
 output "server_ip" {
   value = digitalocean_droplet.application.*.ipv4_address
-  value = digitalocean_droplet.frontend.*.ipv4_address
+  # value = digitalocean_droplet.frontend.*.ipv4_address
 }
 
 # Create a new VPC
