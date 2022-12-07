@@ -84,13 +84,13 @@ resource "digitalocean_firewall" "front_end_firewall" {
   }
 
   inbound_rule {
-    protocol = "HTTP"
+    protocol = "tcp"
     port_range = "80"
     source_addresses = ["0.0.0.0/0", "::/0",  "10.46.40.0/24"]
   }
 
   outbound_rule {
-    protocol = "HTTP"
+    protocol = "tcp"
     port_range = "80"
     destination_addresses = [digitalocean_vpc.web_vpc.ip_range]
   }
