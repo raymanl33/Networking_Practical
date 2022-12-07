@@ -63,13 +63,13 @@ resource "digitalocean_droplet" "frontend" {
 
 
 # firewall for bastion server
-resource "digitalocean_firewall" "firewall" {
+resource "digitalocean_firewall" "front_end_firewall" {
   
   #firewall name
-  name = "firewall"
+  name = "front_end_firewall"
 
   # Droplets to apply the firewall to
-  droplet_ids = [digitalocean_droplet.firewall.id]
+  droplet_ids = [digitalocean_droplet.frontend.id]
 
   inbound_rule {
     protocol = "tcp"
