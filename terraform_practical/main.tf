@@ -30,7 +30,7 @@ resource "digitalocean_tag" "instanceRole" {
 
 resource "digitalocean_droplet" "application" {
   image    = var.image_name
- 
+  ip_range = "10.46.40.0/24"
   name     = "application_A01062029"
   region   = var.region
   size     = "s-1vcpu-512mb-10gb"
@@ -49,7 +49,7 @@ resource "digitalocean_droplet" "application" {
 
 resource "digitalocean_droplet" "frontend" {
   image    = var.image_name
-  
+  ip_range = "10.46.40.0/24"
   name     = "frontend_A01062029"
   region   = var.region
   size     = "s-1vcpu-512mb-10gb"
