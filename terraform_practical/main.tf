@@ -60,6 +60,47 @@ resource "digitalocean_droplet" "frontend" {
   }
 }
 
+
+
+# firewall for bastion server
+resource "digitalocean_firewall" "firewall" {
+  
+  #firewall name
+  name = "firewall"
+
+  # Droplets to apply the firewall to
+  droplet_ids = [digitalocean_droplet.firewall.id]
+
+  inbound_rule {
+    protocol = "tcp"
+    port_range = "22"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  outbound_rule {
+    protocol = "tcp"
+    port_range = "22"
+    destination_addresses = [digitalocean_vpc.web_vpc.ip_range]
+  }
+
+  inbound_rule {
+    protocol = "HTTP"
+    port_range = "80"
+    source_addresses = ["0.0.0.0/0", "::/0",  "10.46.40.0/24"]
+  }
+
+  outbound_rule {
+    protocol = "HTTP"
+    port_range = "80"
+    destination_addresses = [digitalocean_vpc.web_vpc.ip_range]
+  }
+
+  outbound_rule {
+    protocol = "icmp"
+    destination_addresses = [digitalocean_vpc.web_vpc.ip_range]
+  }
+}
+
 output "server_ip" {
   value = digitalocean_droplet.application.*.ipv4_address
   # value = digitalocean_droplet.frontend.*.ipv4_address
