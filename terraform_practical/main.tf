@@ -29,8 +29,8 @@ resource "digitalocean_tag" "instanceRole" {
 
 
 resource "digitalocean_droplet" "application" {
-  image    = "rockylinux-9-x64"
-  count    = var.droplet_count
+  image    = var.image_name
+ 
   name     = "application_A01062029"
   region   = var.region
   size     = "s-1vcpu-512mb-10gb"
@@ -48,9 +48,9 @@ resource "digitalocean_droplet" "application" {
 
 
 resource "digitalocean_droplet" "frontend" {
-  image    = "rockylinux-9-x64"
-  count    = var.droplet_count
-  name     = "frontend"
+  image    = var.image_mane
+  
+  name     = "frontend_A01062029"
   region   = var.region
   size     = "s-1vcpu-512mb-10gb"
   tags     = [digitalocean_tag.instanceRole.id]

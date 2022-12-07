@@ -1,0 +1,1 @@
+image_name = "rockylinux-9-x64"
