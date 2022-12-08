@@ -1,1 +1,1 @@
-image_name = "ubuntu-minimal-1804-lts"
+image_name = "ubuntu-22-04-x64"
