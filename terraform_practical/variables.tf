@@ -10,5 +10,5 @@ variable "region" {
 
 variable "image_name" {
     type = string
-    default = "ubuntu-1604-xenial-v20210329a"
+    default = "ubuntu-minimal-1804-lts"
 }

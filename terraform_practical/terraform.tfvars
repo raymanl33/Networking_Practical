@@ -1,1 +1,1 @@
-image_name = "ubuntu-1604-xenial-v20210329a"
+image_name = "ubuntu-minimal-1804-lts"
