@@ -3,4 +3,4 @@
   - hosts: all
     tasks:
     - name: Make sure Python is installed 
-    - raw: apt -y update && apt install -y python-minimal
+      raw: apt -y update && apt install -y python-minimal
