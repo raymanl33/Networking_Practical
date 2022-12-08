@@ -12,7 +12,7 @@ attributes:
   - tags
   - region
 groups: 
-  webserver: "'web' in (do_tags)"
+  webserver: "'A01062029' in (do_tags)"
 compose:
   ansible_host: do_networks.v4 | selectattr('type','eq','public')
     | map(attribute='ip_address') | first
