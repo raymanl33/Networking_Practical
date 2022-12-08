@@ -1,1 +1,1 @@
-image_name = "ubuntu"
+image_name = "ubuntu-1604-xenial-v20210329a"

@@ -10,5 +10,5 @@ variable "region" {
 
 variable "image_name" {
     type = string
-    default = "rockylinux-9-x64"
+    default = "ubuntu-1604-xenial-v20210329a"
 }
