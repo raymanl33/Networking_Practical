@@ -1,1 +1,1 @@
-image_name = "rockylinux-9-x64"
+image_name = "ubuntu"

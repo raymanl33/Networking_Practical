@@ -101,12 +101,12 @@ resource "digitalocean_firewall" "firewall" {
   }
 }
 
-output "server_ip1" {
+output "application_server_ip" {
   value = digitalocean_droplet.application.*.ipv4_address
  
 }
 
-output "server_ip2" {
+output "frontend_server_ip" {
    value = digitalocean_droplet.frontend.*.ipv4_address
 }
 
