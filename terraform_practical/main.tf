@@ -101,9 +101,13 @@ resource "digitalocean_firewall" "firewall" {
   }
 }
 
-output "server_ip" {
+output "server_ip1" {
   value = digitalocean_droplet.application.*.ipv4_address
-  # value = digitalocean_droplet.frontend.*.ipv4_address
+ 
+}
+
+output "server_ip2" {
+   value = digitalocean_droplet.frontend.*.ipv4_address
 }
 
 # Create a new VPC
