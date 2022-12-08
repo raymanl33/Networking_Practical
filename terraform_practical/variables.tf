@@ -12,3 +12,8 @@ variable "image_name" {
     type = string
     default = "ubuntu-22-04-x64"
 }
+
+variable "network_range" {
+    type = string
+    default = "10.46.40.0/24"
+}

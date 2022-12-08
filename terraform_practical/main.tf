@@ -86,7 +86,7 @@ resource "digitalocean_firewall" "firewall" {
   inbound_rule {
     protocol = "tcp"
     port_range = "80"
-    source_addresses = ["0.0.0.0/0", "::/0",  "10.46.40.0/24"]
+    source_addresses = ["0.0.0.0/0", "::/0",  var.network_range]
   }
 
   outbound_rule {
@@ -114,5 +114,5 @@ output "frontend_server_ip" {
 resource "digitalocean_vpc" "web_vpc" {
   name   = "web"
   region = var.region
-  ip_range = "10.46.40.0/24"
+  ip_range = var.network_range
 }
